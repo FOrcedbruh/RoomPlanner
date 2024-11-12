@@ -1,0 +1,17 @@
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\bin\Debug\RoomPlanner.exe.config
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\bin\Debug\RoomPlanner.exe
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\bin\Debug\RoomPlanner.pdb
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\MainWindow.g.cs
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\App.g.cs
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\RoomPlanner_MarkupCompile.cache
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\RoomPlanner_MarkupCompile.lref
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\MainWindow.baml
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\RoomPlanner.g.resources
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\RoomPlanner.Properties.Resources.resources
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\RoomPlanner.csproj.GenerateResource.cache
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\RoomPlanner.csproj.CoreCompileInputs.cache
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\RoomPlanner.exe
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\RoomPlanner.pdb
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\AddFurnitureWindow.g.cs
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\AddFurnitureWindow.baml
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\RoomPlanner.csproj.AssemblyReference.cache
