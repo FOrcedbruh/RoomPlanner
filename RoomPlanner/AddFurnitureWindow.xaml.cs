@@ -19,28 +19,31 @@ namespace RoomPlanner
         public string FurnitureName { get; private set; }
         public double FurnitureWidth { get; private set; }
         public double FurnitureHeight { get; private set; }
+        public double FurnitureZIndex { get; private set; }
 
         public AddFurnitureWindow()
         {
             InitializeComponent();
+            Furniture.SelectedIndex = 0;
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            // Проверка введённых данных
-            if (string.IsNullOrWhiteSpace(FurnitureNameTextBox.Text) ||
+
+            if (string.IsNullOrWhiteSpace(Furniture.Text) ||
                 !double.TryParse(FurnitureWidthTextBox.Text, out double width) ||
-                !double.TryParse(FurnitureHeightTextBox.Text, out double height))
+                !double.TryParse(FurnitureHeightTextBox.Text, out double height) || !double.TryParse(FurnitureZindexTextBox.Text, out double zindex))
             {
                 MessageBox.Show("Пожалуйста, введите корректные значения.");
                 return;
             }
 
-            FurnitureName = FurnitureNameTextBox.Text;
+            FurnitureName = Furniture.Text;
             FurnitureWidth = width;
             FurnitureHeight = height;
+            FurnitureZIndex = zindex;
 
-            DialogResult = true; // Закрыть окно и вернуть результат
+            DialogResult = true;
         }
     }
 }

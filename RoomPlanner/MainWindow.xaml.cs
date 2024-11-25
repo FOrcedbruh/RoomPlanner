@@ -1,38 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+
 
 namespace RoomPlanner
 {
     public partial class MainWindow : Window
     {
         private double roomWidth = 500;
-        private double roomHeight = 400;
+        private double roomHeight = 250;
+        private double roomLength = 400;
+        private const double gridSpacing = 100;
 
         public MainWindow()
         {
             InitializeComponent();
             UpdateRoomSize();
+            DrawGrid();
         }
 
         private void UpdateRoomSize_Click(object sender, RoutedEventArgs e)
         {
             if (double.TryParse(RoomWidthTextBox.Text, out double width) &&
-                double.TryParse(RoomHeightTextBox.Text, out double height))
+                double.TryParse(RoomLengthTextBox.Text, out double length))
             {
                 roomWidth = width;
-                roomHeight = height;
+                roomLength = length;
                 UpdateRoomSize();
             }
             else
@@ -44,33 +42,66 @@ namespace RoomPlanner
         private void UpdateRoomSize()
         {
             RoomCanvas.Width = roomWidth;
-            RoomCanvas.Height = roomHeight;
+            RoomCanvas.Height = roomLength;
+            DrawGrid();
         }
 
-        
+        private void DrawGrid()
+        {
+            for (double x = 0; x <= roomWidth; x += gridSpacing)
+            {
+                Line verticalLine = new Line
+                {
+                    X1 = x,
+                    Y1 = 0,
+                    X2 = x,
+                    Y2 = roomLength,
+                    Stroke = Brushes.Gray,
+                    StrokeThickness = 1
+                };
+                RoomCanvas.Children.Add(verticalLine);
+            }
+            for (double y = 0; y <= roomLength; y += gridSpacing)
+            {
+                Line horizontalLine = new Line
+                {
+                    X1 = 0,
+                    Y1 = y,
+                    X2 = roomWidth,
+                    Y2 = y,
+                    Stroke = Brushes.Gray,
+                    StrokeThickness = 1
+                };
+                RoomCanvas.Children.Add(horizontalLine);
+            }
+
+        }
         private void AddFurniture_Click(object sender, RoutedEventArgs e)
         {
+            
             var addFurnitureWindow = new AddFurnitureWindow();
+            
             if (addFurnitureWindow.ShowDialog() == true)
             {
+                if (addFurnitureWindow.FurnitureZIndex > roomHeight)
+                {
+                    MessageBox.Show("Мебель не поместится по высоте");
+                    return;
+                }
                 AddFurniture(addFurnitureWindow.FurnitureName, addFurnitureWindow.FurnitureWidth, addFurnitureWindow.FurnitureHeight);
             }
         }
 
         private void AddFurniture(string name, double width, double height)
         {
-            
             var rect = new Rectangle
             {
                 Width = width,
                 Height = height,
-                Fill = Brushes.Brown,
-                Stroke = Brushes.Black,
-                StrokeThickness = 2,
                 Tag = name
             };
 
-            
+
             var textBlock = new TextBlock
             {
                 Text = name,
@@ -79,21 +110,27 @@ namespace RoomPlanner
                 TextAlignment = TextAlignment.Center
             };
 
-           
+            var imageBrush = new ImageBrush
+            {
+                ImageSource = new BitmapImage(new Uri(string.Format("pack://application:,,,/Images/{0}.jpg", name), UriKind.RelativeOrAbsolute)),
+                Stretch = Stretch.UniformToFill
+            };
+
+
             Canvas.SetLeft(rect, 10);
             Canvas.SetTop(rect, 10);
             Canvas.SetLeft(textBlock, 10 + (width / 2) - (textBlock.ActualWidth / 2));
             Canvas.SetTop(textBlock, 10 + (height / 2) - (textBlock.ActualHeight / 2));
 
-           
+
             rect.MouseLeftButtonDown += Furniture_MouseLeftButtonDown;
             rect.MouseMove += Furniture_MouseMove;
             rect.MouseLeftButtonUp += Furniture_MouseLeftButtonUp;
 
-           
-            rect.Tag = textBlock;
 
-          
+            rect.Tag = textBlock;
+            rect.Fill = imageBrush;
+
             RoomCanvas.Children.Add(rect);
             RoomCanvas.Children.Add(textBlock);
         }
@@ -119,11 +156,11 @@ namespace RoomPlanner
                 double left = mousePos.X - clickPosition.X;
                 double top = mousePos.Y - clickPosition.Y;
 
-                
+
                 Canvas.SetLeft(rectangle, left);
                 Canvas.SetTop(rectangle, top);
 
-               
+
                 if (rectangle.Tag is TextBlock textBlock)
                 {
                     Canvas.SetLeft(textBlock, left + (rectangle.Width / 2) - (textBlock.ActualWidth / 2));
@@ -143,7 +180,12 @@ namespace RoomPlanner
 
         private void ResetRoom_Click(object sender, RoutedEventArgs e)
         {
-            RoomCanvas.Children.Clear(); 
+            RoomCanvas.Children.Clear();
+            roomWidth = 500;
+            roomLength = 400;
+            RoomCanvas.Width = roomWidth;
+            RoomCanvas.Height = roomLength;
+            DrawGrid();
         }
     }
 }
