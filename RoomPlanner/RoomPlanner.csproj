@@ -102,16 +102,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Диван.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Стул.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Шкаф.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Стол.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Кровать.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ковер.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Диван.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Стул.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

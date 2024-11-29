@@ -98,7 +98,8 @@ namespace RoomPlanner
             {
                 Width = width,
                 Height = height,
-                Tag = name
+                Tag = name,
+                RenderTransformOrigin = new Point(0.5, 0.5)
             };
 
 
@@ -115,6 +116,8 @@ namespace RoomPlanner
                 ImageSource = new BitmapImage(new Uri(string.Format("pack://application:,,,/Images/{0}.jpg", name), UriKind.RelativeOrAbsolute)),
                 Stretch = Stretch.UniformToFill
             };
+
+            rect.MouseRightButtonDown += RotatingRectangle_MouseLeftButtonDown;
 
 
             Canvas.SetLeft(rect, 10);
@@ -133,6 +136,24 @@ namespace RoomPlanner
 
             RoomCanvas.Children.Add(rect);
             RoomCanvas.Children.Add(textBlock);
+        }
+
+        private void RotatingRectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is Rectangle rect)
+            {
+                
+                if (rect.RenderTransform is RotateTransform rotateTransform)
+                {
+                   
+                    rotateTransform.Angle += 45;
+                }
+                else
+                {
+                    
+                    rect.RenderTransform = new RotateTransform(45);
+                }
+            }
         }
 
         private bool isDragging = false;
@@ -186,6 +207,7 @@ namespace RoomPlanner
             RoomCanvas.Width = roomWidth;
             RoomCanvas.Height = roomLength;
             DrawGrid();
+
         }
     }
 }

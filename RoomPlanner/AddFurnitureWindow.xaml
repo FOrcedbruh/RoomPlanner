@@ -5,27 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoomPlanner"
         mc:Ignorable="d"
+        Icon="https://img.icons8.com/fluent-systems-regular/512w/40C057/room.png"
         Title="Добавление мебели" Height="300" Width="500">
-    <Grid>
-        <StackPanel Margin="10">
-            <TextBlock Text="Выберите мебель" />
-            <ComboBox x:Name="Furniture">
-                <ComboBoxItem Tag="Chair.jpg">Стул</ComboBoxItem>
-                <ComboBoxItem Tag="Table.jpg">Стол</ComboBoxItem>
-                <ComboBoxItem Tag="Cabinet.jpg">Шкаф</ComboBoxItem>
-                <ComboBoxItem Tag="Sofa.jpg">Диван</ComboBoxItem>
-            </ComboBox>
+    <Grid Background="#212529">
+        <Border Background="#adb5bd" Margin="5" CornerRadius="20">
+            <StackPanel Margin="10">
+                <TextBlock Text="Выберите мебель" Foreground="#2d2e2e"/>
+                <ComboBox x:Name="Furniture">
+                    <ComboBoxItem >Стул</ComboBoxItem>
+                    <ComboBoxItem >Стол</ComboBoxItem>
+                    <ComboBoxItem >Шкаф</ComboBoxItem>
+                    <ComboBoxItem >Диван</ComboBoxItem>
+                    <ComboBoxItem >Кровать</ComboBoxItem>
+                    <ComboBoxItem >Ковер</ComboBoxItem>
+                </ComboBox>
 
-            <TextBlock Text="Ширина:" />
-            <TextBox x:Name="FurnitureWidthTextBox" Margin="0,5,0,10"/>
+                <TextBlock Foreground="#2d2e2e" Text="Ширина(см):" />
+                <TextBox FontSize="16" Foreground="#70e000" TextAlignment="Center" Background="#212529" x:Name="FurnitureWidthTextBox" Margin="0,5,0,10"/>
 
-            <TextBlock Text="Длина:" />
-            <TextBox x:Name="FurnitureHeightTextBox" Margin="0,5,0,10"/>
+                <TextBlock Foreground="#2d2e2e" Text="Длина(см):" />
+                <TextBox FontSize="16" Foreground="#70e000" TextAlignment="Center" Background="#212529" x:Name="FurnitureHeightTextBox" Margin="0,5,0,10"/>
 
-            <TextBlock Text="Высота:" />
-            <TextBox x:Name="FurnitureZindexTextBox" Margin="0,5,0,10"/>
+                <TextBlock Foreground="#2d2e2e" Text="Высота(см):" />
+                <TextBox FontSize="16" Foreground="#70e000" TextAlignment="Center" Background="#212529" x:Name="FurnitureZindexTextBox" Margin="0,5,0,10"/>
 
-            <Button Content="Добавить" Click="AddButton_Click" Width="100" HorizontalAlignment="Center"/>
-        </StackPanel>
+                <Button Content="Добавить" Click="AddButton_Click" Width="100" HorizontalAlignment="Center" Background="#495057" Foreground="#fff"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
