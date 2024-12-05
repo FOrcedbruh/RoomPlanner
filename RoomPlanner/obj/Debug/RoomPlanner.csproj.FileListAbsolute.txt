@@ -15,3 +15,5 @@ C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\RoomPlanner.pdb
 C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\AddFurnitureWindow.g.cs
 C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\AddFurnitureWindow.baml
 C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\RoomPlanner.csproj.AssemblyReference.cache
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\AuthWindow.g.cs
+C:\Users\Илья\source\repos\RoomPlanner\RoomPlanner\obj\Debug\AuthWindow.baml
