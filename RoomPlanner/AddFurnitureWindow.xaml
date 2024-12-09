@@ -21,13 +21,13 @@
                 </ComboBox>
 
                 <TextBlock Foreground="#2d2e2e" Text="Ширина(см):" />
-                <TextBox FontSize="16" Foreground="#70e000" TextAlignment="Center" Background="#212529" x:Name="FurnitureWidthTextBox" Margin="0,5,0,10"/>
+                <TextBox FontSize="16" Foreground="#fff" TextAlignment="Center" Background="#212529" x:Name="FurnitureWidthTextBox" Margin="0,5,0,10"/>
 
                 <TextBlock Foreground="#2d2e2e" Text="Длина(см):" />
-                <TextBox FontSize="16" Foreground="#70e000" TextAlignment="Center" Background="#212529" x:Name="FurnitureHeightTextBox" Margin="0,5,0,10"/>
+                <TextBox FontSize="16" Foreground="#fff" TextAlignment="Center" Background="#212529" x:Name="FurnitureHeightTextBox" Margin="0,5,0,10"/>
 
                 <TextBlock Foreground="#2d2e2e" Text="Высота(см):" />
-                <TextBox FontSize="16" Foreground="#70e000" TextAlignment="Center" Background="#212529" x:Name="FurnitureZindexTextBox" Margin="0,5,0,10"/>
+                <TextBox FontSize="16" Foreground="#fff" TextAlignment="Center" Background="#212529" x:Name="FurnitureZindexTextBox" Margin="0,5,0,10"/>
 
                 <Button Content="Добавить" Click="AddButton_Click" Width="100" HorizontalAlignment="Center" Background="#495057" Foreground="#fff"/>
             </StackPanel>

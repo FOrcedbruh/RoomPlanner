@@ -43,11 +43,14 @@ namespace RoomPlanner
         {
             RoomCanvas.Width = roomWidth;
             RoomCanvas.Height = roomLength;
+            UpdateWindow();
             DrawGrid();
         }
 
         private void DrawGrid()
         {
+            RoomCanvas.Children.Clear();
+            double spacing = gridSpacing * ScaleTransform.ScaleX;
             for (double x = 0; x <= roomWidth; x += gridSpacing)
             {
                 Line verticalLine = new Line
@@ -207,7 +210,12 @@ namespace RoomPlanner
             RoomCanvas.Width = roomWidth;
             RoomCanvas.Height = roomLength;
             DrawGrid();
+        }
 
+        private void UpdateWindow()
+        {
+            window.Height = LeftBorder.Height + roomHeight + 100;
+            window.Width = LeftBorder.Width + roomWidth + 100;
         }
     }
 }

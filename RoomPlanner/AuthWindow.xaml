@@ -9,11 +9,11 @@
         Title="Авторизация" Height="260" Width="300">
     <Grid Background="LightGray">
         <StackPanel VerticalAlignment="Center">
-            <TextBlock HorizontalAlignment="Center" Foreground="#70e000" FontWeight="Bold" FontSize="18">Вход</TextBlock>
-            <Label Margin="10 0 0 0">Логин</Label>
-            <TextBox Padding="10 0" FontWeight="DemiBold" Margin="10 0" x:Name="login"></TextBox>
-            <Label Margin="10 0 0 0">Пароль</Label>
-            <PasswordBox Padding="10 0" FontWeight="DemiBold" Margin="10 0" x:Name="password"></PasswordBox>
+            <TextBlock  HorizontalAlignment="Center" Foreground="#70e000" FontWeight="Bold" FontSize="18">Вход</TextBlock>
+            <Label FontWeight="Bold" Margin="20 0 0 0">Логин</Label>
+            <TextBox Padding="10 0" FontWeight="DemiBold"  Margin="20 0" x:Name="login" Background="Gray"></TextBox>
+            <Label FontWeight="Bold" Margin="20 0 0 0">Пароль</Label>
+            <PasswordBox Background="Gray" Padding="10 0" FontWeight="DemiBold" Margin="20 0" x:Name="password"></PasswordBox>
             <Button Click="Button_Click" Height="30" Width="100" Margin="10" Background="Gray" Foreground="#70e000">Авторизоваться</Button>
         </StackPanel>
     </Grid>
